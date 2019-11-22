@@ -2,7 +2,7 @@ package vtaras.own.utils.clipboard;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.awt.*;
+import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
