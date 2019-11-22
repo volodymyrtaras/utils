@@ -21,7 +21,7 @@ public class ClipboardUtils {
         fileExists = false;
     }
 
-    String getUnixStyleFilePath() {
+    public String getUnixStyleFilePath() {
         String filepath = "";
         if (transferable != null && transferable.isDataFlavorSupported(DataFlavor.javaFileListFlavor)) {
             Object object = null;
@@ -56,7 +56,7 @@ public class ClipboardUtils {
         return filepath;
     }
 
-    File getFileFromClipboard() {
+    public File getFileFromClipboard() {
         return fileExists ? new File(getUnixStyleFilePath()) : null;
     }
 }

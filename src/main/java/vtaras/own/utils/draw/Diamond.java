@@ -1,7 +1,7 @@
 package vtaras.own.utils.draw;
 
-class Diamond {
-    static void drawDiamond(int size) {
+public class Diamond {
+    public static void drawDiamond(int size) {
         drawDiamondUpperPart(size);
         drawBottomPart(size);
     }

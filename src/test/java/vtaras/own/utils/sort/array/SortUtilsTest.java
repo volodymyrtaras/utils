@@ -4,9 +4,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static vtaras.own.utils.sort.array.Sort.bucketSort;
+import static vtaras.own.utils.sort.array.SortUtils.bucketSort;
 
-public class SortTest {
+public class SortUtilsTest {
     private int[] mainArray;
 
     @Before

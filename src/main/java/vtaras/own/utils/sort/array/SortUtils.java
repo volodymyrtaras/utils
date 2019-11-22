@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Sort {
+public class SortUtils {
     public static void bubbleSort(int[] numbers) {
         for (int i = 0; i < numbers.length; i++) {
             for (int j = 1; j < (numbers.length - i); j++) {
