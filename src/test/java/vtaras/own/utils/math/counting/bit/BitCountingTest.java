@@ -1,4 +1,4 @@
-package vtaras.own.utils.math.bit.counting;
+package vtaras.own.utils.math.counting.bit;
 
 import org.junit.Assert;
 import org.junit.Test;
