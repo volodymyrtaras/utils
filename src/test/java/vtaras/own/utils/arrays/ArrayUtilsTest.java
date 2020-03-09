@@ -54,7 +54,7 @@ public class ArrayUtilsTest {
     public void testRemoveDuplicates() {
         int[] firstResultArr = new int[] {0, 1, 2};
         int[] secondResultArr = new int[] {0, 1, 2};
-        int[] thirdResultArr = new int[] {0, 1, 2, 3};
+        int[] thirdResultArr = new int[] {1, 2, 3};
         Assert.assertArrayEquals(firstResultArr, ArrayUtils.removeDuplicates(firstDuplicateArr));
         Assert.assertArrayEquals(secondResultArr, ArrayUtils.removeDuplicates(secondDuplicateArr));
         Assert.assertArrayEquals(thirdResultArr, ArrayUtils.removeDuplicates(thirdDuplicateArr));

@@ -77,10 +77,10 @@ public class ArrayUtils {
         for (int i : arr) {
             set.add(i);
         }
-        Integer[] integers = (Integer[]) set.toArray();
+        Object[] integers = set.toArray();
         int[] result = new int[integers.length];
         for (int i = 0; i < integers.length; i++) {
-            result[i] = integers[i];
+            result[i] = (int) integers[i];
         }
         return result;
     }
