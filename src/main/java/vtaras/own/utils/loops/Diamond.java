@@ -1,4 +1,4 @@
-package vtaras.own.utils.draw;
+package vtaras.own.utils.loops;
 
 public class Diamond {
     public static void drawDiamond(int size) {
