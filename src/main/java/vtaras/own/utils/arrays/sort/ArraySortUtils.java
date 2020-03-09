@@ -1,4 +1,4 @@
-package vtaras.own.utils.sort.array;
+package vtaras.own.utils.arrays.sort;
 
 /*
  *****TOP FIVE*****
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class SortUtils {
+public class ArraySortUtils {
     public static void bubbleSort(int[] numbers) {
         for (int i = 0; i < numbers.length; i++) {
             for (int j = 1; j < (numbers.length - i); j++) {

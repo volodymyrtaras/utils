@@ -1,12 +1,12 @@
-package vtaras.own.utils.sort.array;
+package vtaras.own.utils.arrays.sort;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static vtaras.own.utils.sort.array.SortUtils.bucketSort;
+import static vtaras.own.utils.arrays.sort.ArraySortUtils.bucketSort;
 
-public class SortUtilsTest {
+public class ArraySortUtilsTest {
     private int[] mainArray;
 
     @Before
