@@ -1,4 +1,4 @@
-package vtaras.own.utils.arrays.tricks;
+package vtaras.own.utils.arrays;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -11,7 +11,7 @@ import java.util.Map;
 public class ArrayUtils {
 
     //returns first missed integer in sorted array
-    static int findFirstMissedInteger(int[] arr) {
+    public static int findFirstMissedInteger(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             if (i == arr.length - 1) {
                 continue;
@@ -24,7 +24,7 @@ public class ArrayUtils {
     }
 
     //returns array of duplicate numbers and their count
-    static int[][] findDuplicatesInArrayOfIntegers(int[] arr) {
+    public static int[][] findDuplicatesInArrayOfIntegers(int[] arr) {
         Arrays.sort(arr);
         Map<Integer, Integer> resultMap = new HashMap<>(100);
         for (int i = 0; i < arr.length; i++) {
@@ -44,7 +44,7 @@ public class ArrayUtils {
     }
 
     //converts map of integers to 2D array
-    static int[][] convertMapOfIntegersToArray(Map<Integer, Integer> map) {
+    public static int[][] convertMapOfIntegersToArray(Map<Integer, Integer> map) {
         int i = 0;
         int[][] resultArr = new int[map.size()][2];
         for (Map.Entry<Integer, Integer> mapping : map.entrySet()) {
@@ -56,7 +56,7 @@ public class ArrayUtils {
     }
 
     //converts list of integers to array
-    static int[] convertListOfIntegersToArray(List<Integer> list) {
+    public static int[] convertListOfIntegersToArray(List<Integer> list) {
         int[] resultArr = new int[list.size()];
         int index = 0;
         for (Integer i : list) {

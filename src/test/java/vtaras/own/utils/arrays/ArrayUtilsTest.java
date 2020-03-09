@@ -1,8 +1,9 @@
-package vtaras.own.utils.arrays.tricks;
+package vtaras.own.utils.arrays;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import vtaras.own.utils.arrays.ArrayUtils;
 
 import java.util.Arrays;
 
