@@ -14,7 +14,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ArraySortUtils {
-    public static void bubbleSort(int[] numbers) {
+
+    public static int[] bubbleSort(int[] numbers) {
         for (int i = 0; i < numbers.length; i++) {
             for (int j = 1; j < (numbers.length - i); j++) {
                 if (numbers[j - 1] > numbers[j]) {
@@ -24,9 +25,10 @@ public class ArraySortUtils {
                 }
             }
         }
+        return numbers;
     }
 
-    public static void insertionSort(int[] numbers) {
+    public static int[] insertionSort(int[] numbers) {
         for (int i = 1; i < numbers.length; i++) {
             int x = numbers[i];
             int j = i - 1;
@@ -36,9 +38,10 @@ public class ArraySortUtils {
             }
             numbers[j + 1] = x;
         }
+        return numbers;
     }
 
-    public static void bucketSort(int[] numbers) {
+    public static int[] bucketSort(int[] numbers) {
         int[] array = new int[numbers.length + 1];
         Arrays.fill(array, 0);
         for (int number : numbers) {
@@ -50,9 +53,10 @@ public class ArraySortUtils {
                 numbers[x++] = i;
             }
         }
+        return numbers;
     }
 
-    public static void radixSort(int[] numbers) {
+    public static int[] radixSort(int[] numbers) {
         List<Integer>[] list = new ArrayList[numbers.length];
         for (int i = 0; i < list.length; i++) {
             list[i] = new ArrayList<>();
@@ -78,14 +82,16 @@ public class ArraySortUtils {
             }
             divisor *= 10;
         }
+        return numbers;
     }
 
-    public static void quickSort(int[] numbers, int low, int high) {
+    public static int[] quickSort(int[] numbers, int low, int high) {
         if (low < high) {
             int x = partition(numbers, low, high);
             quickSort(numbers, low, x - 1);
             quickSort(numbers, x + 1, high);
         }
+        return numbers;
     }
 
     private static int partition(int[] numbers, int low, int high) {
