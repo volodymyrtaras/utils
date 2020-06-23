@@ -12,7 +12,7 @@ public class Calculator {
 
     private static HashMap<Character, BinaryOperator<Double>> addOperations() {
         HashMap<Character, BinaryOperator<Double>> operations = new HashMap<>();
-        operations.put('+', (x, y) -> x + y);
+        operations.put('+', Double::sum);
         operations.put('-', (x, y) -> x - y);
         operations.put('*', (x, y) -> x * y);
         operations.put('/', (x, y) -> x / y);
@@ -22,7 +22,7 @@ public class Calculator {
         return operations;
     }
 
-    public double calculate(double x, char c, double y) {
+    public static double calculate(double x, char c, double y) {
         BinaryOperator<Double> action = operations.get(c);
         return action.apply(x, y);
     }
