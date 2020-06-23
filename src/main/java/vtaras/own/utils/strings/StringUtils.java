@@ -3,13 +3,17 @@ package vtaras.own.utils.strings;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class StringUtils {
 
-    /*
-     *  returns map of duplicate characters and their count
-     *  if no duplicates found, returns empty map
+    /**
+     * Returns map of duplicate characters and their count.
+     * If no duplicates found, returns empty map.
+     *
+     * @param s String
+     * @return Map<Character, Integer>
      */
     public static Map<Character, Integer> findAllDuplicatesInString(String s) {
         char[] chars = s.toLowerCase().toCharArray();
@@ -29,8 +33,12 @@ public class StringUtils {
         return map;
     }
 
-    /*
-     * returns true, if given strings are anagrams
+    /**
+     * Returns true, if given strings are anagrams.
+     *
+     * @param word    String
+     * @param anagram String
+     * @return boolean
      */
     public static boolean isAnagram(String word, String anagram) {
         if (word.length() != anagram.length()) {
@@ -50,8 +58,11 @@ public class StringUtils {
         return anagram.isEmpty();
     }
 
-    /*
-     * returns reversed decoded String
+    /**
+     * Returns reversed decoded Ascii String.
+     *
+     * @param encoded String
+     * @return String
      */
     public static String decodeAsciiString(String encoded) {
         StringBuilder decoded = new StringBuilder();
@@ -68,11 +79,14 @@ public class StringUtils {
         return decoded.toString();
     }
 
-    /*
-     * returns first char in word which is repeated
-     * if no duplicate found, return null
+    /**
+     * Returns first char in word which is repeated
+     * If no duplicates were found, return null.
+     *
+     * @param s Character
+     * @return String
      */
-    public static Character findFirstNonRepeatedChar(String s) {
+    public static Character findFirstRepeatedChar(String s) {
         Set<Character> set = new HashSet<>();
         char[] chars = s.toLowerCase().toCharArray();
         for (char c : chars) {
@@ -85,8 +99,11 @@ public class StringUtils {
         return null;
     }
 
-    /*
-     * reverses a string using recursion
+    /**
+     * Reverses a string using recursion.
+     *
+     * @param s String
+     * @return String
      */
     public static String reverseStringRecursively(String s) {
         if (s.length() < 2) {
@@ -95,8 +112,11 @@ public class StringUtils {
         return reverseStringRecursively(s.substring(1)) + s.charAt(0);
     }
 
-    /*
-     * returns true, if string has only numbers
+    /**
+     * Returns true, if string has only numbers.
+     *
+     * @param s String
+     * @return boolean
      */
     public static boolean isStringContainsOnlyNumbers(String s) {
         char[] chars = s.toLowerCase().toCharArray();
@@ -109,8 +129,11 @@ public class StringUtils {
         return true;
     }
 
-    /*
-     * returns count of vowels in given word
+    /**
+     * Returns count of vowels in given word.
+     *
+     * @param s String
+     * @return int
      */
     public static int vowelsCount(String s) {
         char[] chars = s.toLowerCase().toCharArray();
@@ -130,8 +153,12 @@ public class StringUtils {
         return count;
     }
 
-    /*
-     * returns count of symbol occurrences in given string
+    /**
+     * Returns count of symbol occurrences in given string.
+     *
+     * @param character Character
+     * @param s         String
+     * @return int
      */
     public static int countOfSymbolOccurrences(Character character, String s) {
         char[] chars = s.toLowerCase().toCharArray();
@@ -144,10 +171,51 @@ public class StringUtils {
         return count;
     }
 
-    /*
-     * returns true if given string is palindrome
+    /**
+     * Returns true if given string is palindrome.
+     *
+     * @param s String
+     * @return boolean
      */
     public static boolean isPalindrome(String s) {
         return new StringBuilder(s.toLowerCase()).reverse().toString().equals(s.toLowerCase());
+    }
+
+    /**
+     * Returns true if input string has the right brackets order.
+     * Supported brackets: "()", "{}", "[]".
+     * Example: "{a[b]c}" - returns true, "{[(a]d]a}" - returns false
+     *
+     * @param input String
+     * @return boolean
+     */
+    public static boolean checkBracketsOrder(String input) {
+        Stack stack = new Stack();
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            switch (c) {
+                case '[':
+                case '{':
+                case '(':
+                    stack.push(c);
+                    break;
+                case ']':
+                case '}':
+                case ')':
+                    if (!stack.isEmpty()) {
+                        char ch = (char) stack.pop();
+                        if ((c == '}' && ch != '{') ||
+                            (c == ']' && ch != '[') ||
+                            (c == ')' && ch != '(')) {
+                            return false;
+                        }
+                    } else {
+                        return false;
+                    }
+                default:
+                    break;
+            }
+        }
+        return stack.isEmpty();
     }
 }

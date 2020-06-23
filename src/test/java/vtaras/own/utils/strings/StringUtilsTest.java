@@ -47,9 +47,9 @@ public class StringUtilsTest {
 
     @Test
     public void testFindFirstNonRepeatedChar() {
-        Assert.assertNull(StringUtils.findFirstNonRepeatedChar("Acer"));
-        Assert.assertEquals(new Character('s'), StringUtils.findFirstNonRepeatedChar("Asus"));
-        Assert.assertEquals(new Character('o'), StringUtils.findFirstNonRepeatedChar("Volodymyr"));
+        Assert.assertNull(StringUtils.findFirstRepeatedChar("Acer"));
+        Assert.assertEquals(Character.valueOf('s'), StringUtils.findFirstRepeatedChar("Asus"));
+        Assert.assertEquals(Character.valueOf('o'), StringUtils.findFirstRepeatedChar("Volodymyr"));
     }
 
     @Test
@@ -86,5 +86,15 @@ public class StringUtilsTest {
         Assert.assertTrue(StringUtils.isPalindrome("Anna"));
         Assert.assertTrue(StringUtils.isPalindrome("waaw"));
         Assert.assertFalse(StringUtils.isPalindrome("akia"));
+    }
+
+    @Test
+    public void testCheckBracketsOrder() {
+        Assert.assertTrue(StringUtils.checkBracketsOrder(""));
+        Assert.assertTrue(StringUtils.checkBracketsOrder("({[]})"));
+        Assert.assertTrue(StringUtils.checkBracketsOrder("{a(b{c[d]e}f)g}h"));
+        Assert.assertFalse(StringUtils.checkBracketsOrder("({(]})"));
+        Assert.assertFalse(StringUtils.checkBracketsOrder("{{f)"));
+        Assert.assertFalse(StringUtils.checkBracketsOrder("({a(b{c[d]e}f)g}h"));
     }
 }
