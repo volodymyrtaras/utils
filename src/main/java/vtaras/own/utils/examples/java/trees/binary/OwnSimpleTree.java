@@ -1,4 +1,4 @@
-package vtaras.own.utils.examples.java.binary;
+package vtaras.own.utils.examples.java.trees.binary;
 
 import java.util.Stack;
 
