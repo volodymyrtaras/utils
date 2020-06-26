@@ -2,12 +2,22 @@ package vtaras.own.utils.arrays;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @Slf4j
 public class ArrayUtils {
 
-    //returns first missed integer in sorted array
+    /**
+     * Returns first missed integer in sorted array.
+     *
+     * @param arr int[]
+     * @return int
+     */
     public static int findFirstMissedArrayElement(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             if (i == arr.length - 1) {
@@ -20,8 +30,11 @@ public class ArrayUtils {
         return 0;
     }
 
-    /*
-     * returns array of duplicate numbers and their count
+    /**
+     * Returns array of duplicate numbers and their count.
+     *
+     * @param arr int[]
+     * @return int[][]
      */
     public static int[][] findDuplicates(int[] arr) {
         Arrays.sort(arr);
@@ -42,8 +55,11 @@ public class ArrayUtils {
         return convertMapToArray(resultMap);
     }
 
-    /*
-     * converts map of integers to 2D array
+    /**
+     * Converts map of integers to 2D array.
+     *
+     * @param map Map<Integer, Integer>
+     * @return int[][]
      */
     public static int[][] convertMapToArray(Map<Integer, Integer> map) {
         int i = 0;
@@ -56,8 +72,11 @@ public class ArrayUtils {
         return resultArr;
     }
 
-    /*
-     * converts list of integers to array
+    /**
+     * Converts list of integers to array
+     *
+     * @param list List<Integer>
+     * @return int[]
      */
     public static int[] convertListToArray(List<Integer> list) {
         int[] resultArr = new int[list.size()];
@@ -69,8 +88,11 @@ public class ArrayUtils {
         return resultArr;
     }
 
-    /*
-     * converts array with non-duplicate values
+    /**
+     * Converts array with non-duplicate values.
+     *
+     * @param arr int[]
+     * @return int[]
      */
     public static int[] removeDuplicates(int[] arr) {
         Set<Integer> set = new HashSet<>();
@@ -85,11 +107,15 @@ public class ArrayUtils {
         return result;
     }
 
-    /*
-     * finds all pairs whose sum is as given
+    /**
+     * Finds all pairs whose sum is as given.
+     *
+     * @param arr int[]
+     * @param sum int
+     * @return Map<Integer, Integer>
      */
     public static Map<Integer, Integer> findAllPairsWhoseSumIsAsGiven(int[] arr, int sum) {
-        Map<Integer, Integer> map = new HashMap<>(arr.length/2);
+        Map<Integer, Integer> map = new HashMap<>(arr.length / 2);
         int first;
         int second;
         for (int i = 0; i < arr.length; i++) {
