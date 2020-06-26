@@ -1,4 +1,4 @@
-package vtaras.own.utils.examples.java.linked;
+package vtaras.own.utils.examples.java.linked.lists;
 
 public class LinkedListUtils {
 

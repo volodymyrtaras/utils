@@ -2,6 +2,9 @@ package vtaras.own.utils.examples.java.linked;
 
 import org.junit.Assert;
 import org.junit.Test;
+import vtaras.own.utils.examples.java.linked.lists.LinkedListUtils;
+import vtaras.own.utils.examples.java.linked.lists.OwnLinkedList;
+import vtaras.own.utils.examples.java.linked.lists.OwnSinglyLinkedList;
 
 public class LinkedListUtilsTest {
 
