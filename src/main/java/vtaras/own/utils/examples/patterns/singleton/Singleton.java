@@ -1,6 +1,7 @@
-package vtaras.own.utils.examples.java.patterns.singleton;
+package vtaras.own.utils.examples.patterns.singleton;
 
 public class Singleton {
+
     private volatile Singleton instance = null;
     private volatile String name = "singleton";
 

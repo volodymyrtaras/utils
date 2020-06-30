@@ -1,6 +1,6 @@
-package vtaras.own.utils.examples.java.reflection;
+package vtaras.own.utils.examples.reflection;
 
-import vtaras.own.utils.examples.java.patterns.singleton.Singleton;
+import vtaras.own.utils.examples.patterns.singleton.Singleton;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;

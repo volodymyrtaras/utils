@@ -1,4 +1,4 @@
-package vtaras.own.utils.examples.java.loops;
+package vtaras.own.utils.examples.loops;
 
 public class Diamond {
 

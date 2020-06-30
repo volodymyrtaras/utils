@@ -1,4 +1,4 @@
-package vtaras.own.utils.examples.java.linked.lists;
+package vtaras.own.utils.examples.linked.lists;
 
 public class OwnSinglyLinkedList {
 

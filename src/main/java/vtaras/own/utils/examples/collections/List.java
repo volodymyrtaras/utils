@@ -1,4 +1,4 @@
-package vtaras.own.utils.examples.java.collections;
+package vtaras.own.utils.examples.collections;
 
 public interface List<T> {
 

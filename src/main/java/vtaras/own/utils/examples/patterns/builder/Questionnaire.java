@@ -1,4 +1,4 @@
-package vtaras.own.utils.examples.java.patterns.builder;
+package vtaras.own.utils.examples.patterns.builder;
 
 public class Questionnaire {
     private String name;

@@ -1,4 +1,4 @@
-package vtaras.own.utils.examples.java.core;
+package vtaras.own.utils.examples.core;
 
 import lombok.extern.slf4j.Slf4j;
 

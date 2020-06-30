@@ -1,10 +1,10 @@
-package vtaras.own.utils.examples.java.linked;
+package vtaras.own.utils.examples.linked;
 
 import org.junit.Assert;
 import org.junit.Test;
-import vtaras.own.utils.examples.java.linked.lists.LinkedListUtils;
-import vtaras.own.utils.examples.java.linked.lists.OwnLinkedList;
-import vtaras.own.utils.examples.java.linked.lists.OwnSinglyLinkedList;
+import vtaras.own.utils.examples.linked.lists.LinkedListUtils;
+import vtaras.own.utils.examples.linked.lists.OwnLinkedList;
+import vtaras.own.utils.examples.linked.lists.OwnSinglyLinkedList;
 
 public class LinkedListUtilsTest {
 
