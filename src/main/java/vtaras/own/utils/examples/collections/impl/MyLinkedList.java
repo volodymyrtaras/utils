@@ -1,4 +1,6 @@
-package vtaras.own.utils.examples.collections;
+package vtaras.own.utils.examples.collections.impl;
+
+import vtaras.own.utils.examples.collections.List;
 
 public class MyLinkedList<T> implements List<T> {
     private int size;

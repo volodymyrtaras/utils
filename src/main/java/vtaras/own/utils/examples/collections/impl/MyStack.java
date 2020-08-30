@@ -1,15 +1,15 @@
-package vtaras.own.utils.examples.collections;
+package vtaras.own.utils.examples.collections.impl;
 
-public class MyArrayList<T> implements List<T> {
+public class MyStack<T> {
     private T[] elementData;
     private static final int DEFAULT_CAPACITY = 10;
-    private int size = 0;
+    private int size;
 
-    public MyArrayList() {
+    public MyStack() {
         elementData = (T[]) new Object[DEFAULT_CAPACITY];
     }
 
-    public MyArrayList(int index) {
+    public MyStack(int index) {
         if (index > DEFAULT_CAPACITY) {
             elementData = (T[]) new Object[index];
         } else if (index < DEFAULT_CAPACITY && index >= 0) {
@@ -19,44 +19,42 @@ public class MyArrayList<T> implements List<T> {
         }
     }
 
-    @Override
-    public void add(T t) {
+    public T push(T t) {
         if (size == DEFAULT_CAPACITY) {
             T[] data = (T[]) new Object[size + 10];
             System.arraycopy(elementData, 0, data, 0, size);
             elementData = data;
         }
         elementData[size++] = t;
+        return t;
     }
 
-    @Override
     public void remove(int index) {
         if (index < 0 || index > size - 1) {
-            System.out.println("Element does not exist");
+            throw new IndexOutOfBoundsException("Element does not exist");
         } else {
             System.arraycopy(elementData, index + 1, elementData, index, size - index);
             size--;
         }
     }
 
-    @Override
-    public void clear() {
+    void clear() {
         elementData = (T[]) new Object[DEFAULT_CAPACITY];
         size = 0;
     }
 
-    @Override
     public int size() {
-        return elementData.length;
+        return size;
     }
 
-    @Override
-    public T get(int index) {
-        if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("Element does not exist");
-        } else {
-            return elementData[index];
-        }
+    public T peek() {
+        return elementData[size - 1];
+    }
+
+    public T pop() {
+        T object = peek();
+        remove(size - 1);
+        return object;
     }
 
     public void print() {

@@ -1,15 +1,19 @@
-package vtaras.own.utils.examples.collections;
+package vtaras.own.utils.examples.collections.impl;
 
-public class MyStack<T> {
+import vtaras.own.utils.examples.collections.List;
+
+import java.util.Arrays;
+
+public class MyArrayList<T> implements List<T> {
     private T[] elementData;
     private static final int DEFAULT_CAPACITY = 10;
-    private int size;
+    private int size = 0;
 
-    public MyStack() {
+    public MyArrayList() {
         elementData = (T[]) new Object[DEFAULT_CAPACITY];
     }
 
-    public MyStack(int index) {
+    public MyArrayList(int index) {
         if (index > DEFAULT_CAPACITY) {
             elementData = (T[]) new Object[index];
         } else if (index < DEFAULT_CAPACITY && index >= 0) {
@@ -19,47 +23,51 @@ public class MyStack<T> {
         }
     }
 
-    public T push(T t) {
+    @Override
+    public void add(T t) {
         if (size == DEFAULT_CAPACITY) {
             T[] data = (T[]) new Object[size + 10];
             System.arraycopy(elementData, 0, data, 0, size);
             elementData = data;
         }
         elementData[size++] = t;
-        return t;
     }
 
+    @Override
     public void remove(int index) {
         if (index < 0 || index > size - 1) {
-            throw new IndexOutOfBoundsException("Element does not exist");
+            System.out.println("Element does not exist");
         } else {
             System.arraycopy(elementData, index + 1, elementData, index, size - index);
             size--;
         }
     }
 
-    void clear() {
+    @Override
+    public void clear() {
         elementData = (T[]) new Object[DEFAULT_CAPACITY];
         size = 0;
     }
 
+    @Override
     public int size() {
-        return size;
+        return elementData.length;
     }
 
-    public T peek() {
-        return elementData[size - 1];
-    }
-
-    public T pop() {
-        Object object = peek();
-        remove(size - 1);
-        return (T) object;
-    }
-
-    public void print() {
-        for (int i = 0; i < size; i++) {
-            System.out.println(elementData[i]);
+    @Override
+    public T get(int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Element does not exist");
+        } else {
+            return elementData[index];
         }
+    }
+
+    @Override
+    public String toString() {
+        return "MyArrayList{" +
+            "elementData=" + Arrays.toString(elementData) +
+            ", size=" + size +
+            '}';
     }
 }
