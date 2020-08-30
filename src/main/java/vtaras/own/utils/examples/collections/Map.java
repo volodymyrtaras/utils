@@ -7,4 +7,6 @@ public interface Map {
     int size();
 
     void put(Integer key, Long value);
+
+    void remove(Integer key);
 }

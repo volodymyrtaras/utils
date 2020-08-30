@@ -4,6 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 public class MyHashMapTest {
 
@@ -36,6 +38,19 @@ public class MyHashMapTest {
         map.put(1, 2L);
         map.put(1, 2L);
         assertEquals(1, map.size());
+    }
+
+    @Test
+    public void testRemove() {
+        map.put(1234, 567L);
+        map.put(1235, 568L);
+        map.put(1236, 569L);
+        assertEquals(3, map.size());
+        map.remove(1236);
+        assertEquals(2, map.size());
+        assertNull(map.get(1236));
+        assertNotNull(map.get(1235));
+        assertNotNull(map.get(1234));
     }
 
     @Test

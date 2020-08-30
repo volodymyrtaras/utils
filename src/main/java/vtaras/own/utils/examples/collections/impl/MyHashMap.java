@@ -22,7 +22,7 @@ public class MyHashMap implements Map {
 
     @Override
     public Long get(Integer key) {
-        return elements[getIndex(key)].getValue();
+        return elements[getIndex(key)] == null ? null : elements[getIndex(key)].getValue();
     }
 
     @Override
@@ -44,6 +44,12 @@ public class MyHashMap implements Map {
         Node node = new Node(key, value);
         int index = getIndex(key);
         elements[index] = node;
+    }
+
+    @Override
+    public void remove(Integer key) {
+        elements[getIndex(key)] = null;
+        size--;
     }
 
     private void resize() {
